@@ -1,4 +1,5 @@
 # jupyter_tomoyan_extension
+日本語の説明はこちら💁‍♂️ [JupyterLab Extension 開発 [ともやん・どっと・ねっと]](https://www.tomoyan.net/python/jupyterlab/extension_dev)
 
 [![Github Actions Status](https://github.com/tomoyan596/jupyter_tomoyan_extension/workflows/Build/badge.svg)](https://github.com/tomoyan596/jupyter_tomoyan_extension/actions/workflows/build.yml)
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/tomoyan596/jupyter_tomoyan_extension/main?urlpath=lab)
