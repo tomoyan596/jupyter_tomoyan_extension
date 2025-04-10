@@ -1,29 +1,21 @@
 import {
-  JupyterFrontEnd,
   JupyterFrontEndPlugin
 } from '@jupyterlab/application';
 
-import { IThemeManager } from '@jupyterlab/apputils';
+import { pluginJupyterTheme } from './theme';
+import { pluginJupyterLanguage } from './language';
 
 /**
  * Initialization data for the jupyter_tomoyan_extension extension.
- */
-const plugin: JupyterFrontEndPlugin<void> = {
-  id: 'jupyter_tomoyan_extension:plugin',
-  description: 'A JupyterLab extension.',
-  autoStart: true,
-  requires: [IThemeManager],
-  activate: (app: JupyterFrontEnd, manager: IThemeManager) => {
-    console.log('JupyterLab extension jupyter_tomoyan_extension is activated!');
-    const style = 'jupyter_tomoyan_extension/index.css';
-
-    manager.register({
-      name: 'jupyter_tomoyan_extension',
-      isLight: true,
-      load: () => manager.loadCSS(style),
-      unload: () => Promise.resolve(undefined)
-    });
-  }
-};
+ *
+  * reference:
+ *   https://jupyterlab.readthedocs.io/en/stable/api/classes/codemirror.EditorThemeRegistry-1.html
+ *   https://github.com/jupyterlab/jupyterlab/blob/4.3.x/packages/codemirror-extension/src/services.tsx#L91
+ *   https://github.com/jupyterlab/jupyterlab/blob/4.3.x/packages/codemirror/src/language.ts#L536
+*/
+const plugin: JupyterFrontEndPlugin<void>[] = [
+  pluginJupyterTheme,
+  pluginJupyterLanguage
+];
 
 export default plugin;
